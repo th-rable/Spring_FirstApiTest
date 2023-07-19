@@ -6,6 +6,9 @@ import java.util.List;
 import java.util.Map;
 
 public class CreateMember {
+
+
+
     public CreateMember(){
         System.out.println("Run CreateMember");
         count.put("Count",0);
@@ -18,17 +21,22 @@ public class CreateMember {
     public void create(){
         this.memberId++;
 
+        String getTime = GetTime.getTime();
         Map<String,Object> member = new HashMap<>();
 
         count.put("Count",memberId);
 
         member.put("ID",this.memberId);
         member.put("Name",this.memberId + "번 유저");
+        member.put("Time",getTime);
 
         members.set(0,count);
         members.add(member);
 
         System.out.println("Create Members");
+        System.out.println(getTime);
+        System.out.println("-------------------------");
+
         return;
     }
 
